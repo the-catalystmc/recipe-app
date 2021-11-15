@@ -1,0 +1,23 @@
+<section>
+  <div>
+    <%= button_to "Add food", foods_new_path, method: :get, class: 'add-food-btn'  %>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <th>Food</th>
+        <th>Measurement unit</th>
+        <th>Unit price</th>
+        <th>Actions</th>
+      </tr>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= food.price %></td>
+          <td><%= link_to "Delete", food, method: :delete, class: 'delete-food-btn'  %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</section>
