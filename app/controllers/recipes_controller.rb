@@ -5,12 +5,19 @@ class RecipesController < ApplicationController
     @recipes = current_user.recipes
   end
 
+  def show
+    @user = current_user
+    @recipe = current_user.recipes.find(params[:id])
+    @recipe_foods = @recipe.recipe_foods
+    # @foods = @current_user.foods.find(@recipe_foods.food_id)
+  end
+
   def new
     @recipe = Recipe.new
   end
 
   def create
-    if current_user.recipes.create(food_params)
+    if current_user.recipes.create(recipe_params)
       flash[:notice] = 'Recipe added successfully'
       redirect_to recipes_url
     else
@@ -20,7 +27,9 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    if @food.destroy
+    @recipe = current_user.recipes.find(params[:id])
+    @recipe.destroy
+    if @recipe.destroy
       flash[:notice] = 'Recipe deleted successfully'
     else
       flash[:error] = 'Recipe couldn\'t be deleted'
@@ -30,11 +39,11 @@ class RecipesController < ApplicationController
 
   private
 
-  def food_params
+  def recipe_params
     params.require(:Recipe).permit(:name, :preparation_time, :cooking_time, :description)
   end
 
   def set_user_recipes
-    @food = current_user.recipes.find(params[:id])
+    @recipes = current_user.recipes.find(params[:id])
   end
 end
