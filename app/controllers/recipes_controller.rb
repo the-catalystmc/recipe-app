@@ -5,11 +5,14 @@ class RecipesController < ApplicationController
     @recipes = current_user.recipes
   end
 
+  def public_recipes
+    @recipes = current_user.recipes
+  end
+
   def show
     @user = current_user
     @recipe = current_user.recipes.find(params[:id])
     @recipe_foods = @recipe.recipe_foods
-    # @foods = @current_user.foods.find(@recipe_foods.food_id)
   end
 
   def new
@@ -44,6 +47,6 @@ class RecipesController < ApplicationController
   end
 
   def set_user_recipes
-    @recipes = current_user.recipes.find(params[:id])
+    @recipes = current_user.recipes
   end
 end
