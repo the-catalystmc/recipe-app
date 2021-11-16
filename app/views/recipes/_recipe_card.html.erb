@@ -1,15 +1,15 @@
 <a href="/recipes/<%= recipe.id %>">
-<div class="recipe">
-  <div class="title">
-    <h4 class="title-text">
-    <%= recipe.name %>
-    </h4>
-    <button> <%= link_to 'Delete', "recipes/#{recipe.id}", method: :delete %> </button>   
+  <div class="recipe">
+    <div class="title-a">
+      <h4 class="title-text-a">
+      <%= recipe.name %>
+      </h4>
+      <button> <%= link_to 'Delete', "recipes/#{recipe.id}", method: :delete %> </button>   
+    </div>
+    <div class="info">
+      <p class="info-text">
+          <%= recipe.description %>
+      </p>
+    </div>
   </div>
-  <div class="info-text">
-    <p class="info-text">
-        <%= recipe.description %>
-    </p>
-  </div>
-</div>
 </a>

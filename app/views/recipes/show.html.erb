@@ -29,9 +29,9 @@
       </tr>
       <% @recipe_foods.each do |food| %>
         <tr>
+          <td><%= food.food.name %></td>
           <td><%= food.quantity %></td>
-          <td><%= food.quantity %></td>
-          <td><%= food.quantity %></td>
+          <td><%= food.food.price %></td>
           <td>
           <%= link_to "Modify", food, method: :delete, class: 'delete-food-btn'  %>
           <%= link_to "Remove", food, method: :delete, class: 'delete-food-btn'  %>
