@@ -5,6 +5,16 @@
 .recipe {
     display: flex;
     border: 2px solid black;
+    justify-content: space-evenly;
+
+    .title {
+        display: flex;
+        flex-direction: column;
+
+        .title-text {
+            text-align: center;
+        }
+    }
 }
 
 .recipe-name {

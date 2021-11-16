@@ -5,4 +5,12 @@ class Recipe < ApplicationRecord
   def all_recipes
     recipe.order(created_at: :desc)
   end
+
+  # def food_count
+  #   @recipe.recipe_foods.food.count()
+  # end
+
+  # def food_price
+
+  # end
 end

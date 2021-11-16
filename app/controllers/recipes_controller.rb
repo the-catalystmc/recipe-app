@@ -6,12 +6,13 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @recipes = current_user.recipes
+    @recipes = Recipe.all
   end
 
   def show
     @user = current_user
-    @recipe = current_user.recipes.find(params[:id])
+    @recipes = Recipe.all
+    @recipe = @recipes.find(params[:id])
     @recipe_foods = @recipe.recipe_foods
   end
 
