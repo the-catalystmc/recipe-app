@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_user_recipes, only: %i[show update destroy]
+  before_action :set_user_recipe, only: %i[show update]
 
   def index
     @recipes = current_user.recipes
@@ -68,6 +69,7 @@ class RecipesController < ApplicationController
 
   def set_user_recipe
     @recipe = current_user.recipes.find(params[:id])
+  end
 
   def recipe_params
     params.require(:Recipe).permit(:name, :preparation_time, :cooking_time, :description)
