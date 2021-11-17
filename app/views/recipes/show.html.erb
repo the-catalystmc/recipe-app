@@ -1,25 +1,50 @@
-<div class="recipe-container">
-  <h3 class="recipe-name">  <%= @recipe.name %> </h3>
-  <div class="recipe-cont">
-    <div class="info-cont">
-      <p class="prep-time">Preparation Time <%= @recipe.preparation_time %> hours </p>
-      <p class="cook-time">Cooking Time <%= @recipe.cooking_time %> hours </p>
-      <p class="steps"> Steps go here...</p>
-    </div>
-    <div class="public-cont">
-      <% if @recipe.public %>
-        <p>Public </p> <div class="public-on"> <div class="toggle"></div> </div>
-      <% else %>
-      <p>Public </p> <div class="public-of"></div>
-      <% end %>
-    </div>
-  </div>
-  <div class="recipe-buttons">
-    <button> <%= link_to 'Generate Shopping List', general_shopping_list_path, method: :get %> </button> 
-    <button> <%= link_to 'Add Ingredient', edit_recipe_path, method: :get %> </button> 
-  </div>
-  <hr class="line">
+<section>
+  <div>
     <div>
+      <h2><%= @recipe.name %></h2>
+    </div>
+    <div>
+      <div>
+        <% if @recipe.preparation_time > 1 %>
+          <% if @recipe.preparation_time % 1 == 0 %>
+            <p>Preparation time: <%= @recipe.preparation_time.to_i %> hours</p>
+          <% else %>
+            <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
+          <% end %>
+        <% else %>
+          <% if @recipe.preparation_time % 1 == 0 %>
+            <p>Preparation time: <%= @recipe.preparation_time.to_i %> hour</p>
+          <% else %>
+            <p>Preparation time: <%= @recipe.preparation_time %> hour</p>
+          <% end %>
+        <% end %>
+        <% if @recipe.cooking_time > 1 %>
+          <% if @recipe.cooking_time % 1 == 0 %>
+            <p>Cooking time: <%= @recipe.cooking_time.to_i %> hours</p>
+          <% else %>
+            <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
+          <% end %>
+        <% else %>
+          <% if @recipe.cooking_time % 1 == 0 %>
+            <p>Cooking time: <%= @recipe.cooking_time.to_i %> hour</p>
+          <% else %>
+            <p>Cooking time: <%= @recipe.cooking_time %> hour</p>
+          <% end %>
+        <% end %>
+        <p><%= @recipe.description %></p>
+      </div>
+      <div>
+        <div>
+          <%= button_to "Public", recipe_path(id: @recipe.id), method: :put, class: 'update-public-recipe-btn'  %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= button_to 'Generate Shopping List', general_shopping_list_path, method: :get, class: 'generate-shopping-list-btn' %>
+    <%= button_to "Add ingredient", new_recipe_recipe_food_path(recipe_id: @recipe.id), method: :get, class: 'add-ingredient-btn'  %>
+  </div>
+  <div>
     <table>
       <tr>
         <th>Food</th>
@@ -27,17 +52,17 @@
         <th>Value</th>
         <th>Actions</th>
       </tr>
-      <% @recipe_foods.each do |food| %>
+      <% @recipe_foods.each do |recipe_food| %>
         <tr>
-          <td><%= food.food.name %></td>
-          <td><%= food.quantity %></td>
-          <td><%= food.food.price %></td>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+          <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
           <td>
-          <%= link_to "Modify", food, method: :delete, class: 'delete-food-btn'  %>
-          <%= link_to "Remove", food, method: :delete, class: 'delete-food-btn'  %>
+            <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), method: :get, class: 'update-food-link'  %>
+            <%= link_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), method: :delete, class: 'delete-food-link'  %>
           </td>
         </tr>
       <% end %>
     </table>
   </div>
-</div>
+</section>
