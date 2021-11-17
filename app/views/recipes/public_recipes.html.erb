@@ -1,0 +1,8 @@
+<h2 class="pr-header">Public Recipes</h2>
+<div class="recipe-card-container">
+  <% @recipes.each do |recipe| %>
+    <% if recipe.public %>
+        <%= render 'public_recipe_card', recipe: recipe %>
+    <% end %>
+  <% end %>
+</div>

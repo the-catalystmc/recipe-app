@@ -1,0 +1,19 @@
+<a href="/recipes/<%= recipe.id %>">
+<div class="recipe">
+  <div class="title">
+    <h4 class="title-text">
+    <%= recipe.name %>
+    </h4>
+    <p class="title-text">
+    By <%= recipe.user.name %>
+    </p>  </div>
+  <div class="info">
+    <p class="info-text">
+      Total Food Items: <%= recipe.recipe_foods.count %>
+    </p>
+    <p class="info-text">
+      Total Food Price: <%= 10 %>
+    </p>
+  </div>
+</div>
+</a>

@@ -1,0 +1,22 @@
+<div>
+	<h2 class="pr-header">Shopping List</h2>
+	<div class="sl-info-cont">
+		<h3>Amount of food items to buy: <%= @foods.count %></h3>
+		<h3>Total value of food needed: <%= @total_price %>
+</h3>
+	</div>
+	  <table>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.food_quantity %></td>
+          <td>$<%= food.price * food.food_quantity %></td>
+        </tr>
+      <% end %>
+    </table>
+</div>
