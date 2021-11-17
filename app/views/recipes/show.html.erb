@@ -41,7 +41,7 @@
     </div>
   </div>
   <div>
-    <%= button_to "Generate shopping list", recipes_path, method: :get, class: 'generate-shopping-list-btn'  %>
+    <%= button_to 'Generate Shopping List', general_shopping_list_path, method: :get, class: 'generate-shopping-list-btn' %>
     <%= button_to "Add ingredient", new_recipe_recipe_food_path(recipe_id: @recipe.id), method: :get, class: 'add-ingredient-btn'  %>
   </div>
   <div>
