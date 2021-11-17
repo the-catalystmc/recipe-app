@@ -1,0 +1,43 @@
+<div class="recipe-container">
+  <h3 class="recipe-name">  <%= @recipe.name %> </h3>
+  <div class="recipe-cont">
+    <div class="info-cont">
+      <p class="prep-time">Preparation Time <%= @recipe.preparation_time %> hours </p>
+      <p class="cook-time">Cooking Time <%= @recipe.cooking_time %> hours </p>
+      <p class="steps"> Steps go here...</p>
+    </div>
+    <div class="public-cont">
+      <% if @recipe.public %>
+        <p>Public </p> <div class="public-on"> <div class="toggle"></div> </div>
+      <% else %>
+      <p>Public </p> <div class="public-of"></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="recipe-buttons">
+    <button> <%= link_to 'Generate Shopping List', general_shopping_list_path, method: :get %> </button> 
+    <button> <%= link_to 'Add Ingredient', edit_recipe_path, method: :get %> </button> 
+  </div>
+  <hr class="line">
+    <div>
+    <table>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+      <% @recipe_foods.each do |food| %>
+        <tr>
+          <td><%= food.food.name %></td>
+          <td><%= food.quantity %></td>
+          <td><%= food.food.price %></td>
+          <td>
+          <%= link_to "Modify", food, method: :delete, class: 'delete-food-btn'  %>
+          <%= link_to "Remove", food, method: :delete, class: 'delete-food-btn'  %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

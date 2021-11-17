@@ -1,0 +1,93 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.pr-header {
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+table, th, td {
+    border: black solid 1px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(204, 195, 195);
+  }
+
+.sl-info-cont {
+    display: flex;
+    justify-content: space-around;
+}
+
+.recipe {
+    display: flex;
+    border: 2px solid black;
+    justify-content: space-evenly;
+
+    .title {
+        display: flex;
+        flex-direction: column;
+
+        .title-text {
+            text-align: center;
+        }
+    }
+}
+
+.recipe-name {
+    text-align: center;
+}
+
+.recipe-cont {
+    display: flex;
+    justify-content: space-around;
+
+    .public-on {
+        display: flex;
+        justify-content: flex-end;
+        align-content: flex-start;
+        height: 10px;
+        width: 25px;
+        border: 1px black solid;
+        background-color: green;
+        border-radius: 25px;
+
+        .toggle {
+            height: 9px;
+            width: 10px;
+            border: 1px black solid;
+            background-color: white;
+            border-radius: 5px;
+        }
+    }
+
+    .public-off {
+        display: flex;
+        justify-content: flex-end;
+        align-content: flex-start;
+        height: 10px;
+        width: 25px;
+        border: 1px black solid;
+        background-color: red;
+        border-radius: 25px;
+    }
+}
+
+.recipe-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.line {
+    border: 1px solid black;
+    width: 60%;
+}

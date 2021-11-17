@@ -1,0 +1,5 @@
+<div class="recipe-card-container">
+  <% @recipes.each do |recipe| %>
+    <%= render 'recipe_card', recipe: recipe %>
+  <% end %>
+</div>
