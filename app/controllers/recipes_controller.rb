@@ -9,6 +9,14 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def general_shopping_list
+    @foods = current_user.foods
+    @total_price = 0
+    @foods.each do |food|
+      @total_price += food.price * food.food_quantity
+    end
+  end
+
   def show
     @user = current_user
     @recipes = Recipe.all

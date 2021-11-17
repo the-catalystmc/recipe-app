@@ -2,6 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.pr-header {
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+table, th, td {
+    border: black solid 1px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(204, 195, 195);
+  }
+
+.sl-info-cont {
+    display: flex;
+    justify-content: space-around;
+}
+
 .recipe {
     display: flex;
     border: 2px solid black;
