@@ -23,7 +23,7 @@ class FoodsController < ApplicationController
     if @food.destroy
       flash[:notice] = 'Food deleted successfully'
     else
-      flash[:error] = 'Post couldn\'t be deleted'
+      flash[:error] = 'Food couldn\'t be deleted'
     end
     redirect_to foods_url
   end
