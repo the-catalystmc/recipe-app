@@ -1,0 +1,27 @@
+<h2>
+  Foods information
+</h2>
+<div>
+</div>
+<div>
+  <%= form_with model: @recipe_food, url: recipe_recipe_foods_path, method: :post, class: 'add-recipe-food-form' do |form| %>
+    <h2>Add Food: </h2>
+    <br>
+    <div>
+      <%= form.text_field :recipe_id %>
+    </div>
+    <div>
+      <%= form.label "Food" %><br>
+      <%= form.select :food_id, options_for_select(@foods.collect {|f| [ f['name'], f['id'] ] }) %>
+    </div>
+    <br>
+    <div>
+      <%= form.label :quantity %><br>
+      <%= form.number_field :quantity, step: :any, :required => true %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit "Add food" %>
+    </div>
+  <% end %>
+</div>
