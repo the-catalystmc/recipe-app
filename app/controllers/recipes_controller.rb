@@ -47,7 +47,7 @@ class RecipesController < ApplicationController
     end
     redirect_to recipes_url
   end
-  
+
   def update
     if @recipe.update(public: !@recipe.public)
       if @recipe.public
@@ -78,7 +78,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:Recipe).permit(:name, :preparation_time, :cooking_time, :description)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description)
   end
 
   def set_user_recipes

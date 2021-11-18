@@ -1,4 +1,5 @@
 <div class="recipe-card-container">
+<button> <%= link_to 'Add Recipe', "recipes/new" %> </button>
   <% @recipes.each do |recipe| %>
     <%= render 'recipe_card', recipe: recipe %>
   <% end %>
