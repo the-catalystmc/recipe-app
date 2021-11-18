@@ -26,7 +26,6 @@ RSpec.describe 'Recipes', js: true, type: :system do
       click_button 'Log in'
       visit recipes_path
       expect(page).to have_content('Ceviche')
-      expect(page).to have_content('Chilcano')
     end
 
     it 'display the title Recipes' do
@@ -55,8 +54,8 @@ RSpec.describe 'Recipes', js: true, type: :system do
       fill_in 'password', with: '234234'
       click_button 'Log in'
       visit recipes_path
-      click_link 'Chilcano'
-      expect(page).to have_content('Preparation time: 1 hour')
+      click_link 'Ceviche'
+      expect(page).to have_content('Preparation time: 3 hours')
     end
 
     it 'the page show me the ingredients' do
@@ -77,7 +76,7 @@ RSpec.describe 'Recipes', js: true, type: :system do
       fill_in 'password', with: '234234'
       click_button 'Log in'
       visit recipes_path
-      click_link 'Chilcano'
+      click_link 'Ceviche'
       expect(page).to have_button('Add ingredient')
     end
 

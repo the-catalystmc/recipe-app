@@ -7,7 +7,6 @@ class Recipe < ApplicationRecord
   validates :description, presence: true
   validates :public, presence: true
 
-
   def all_recipes
     recipe.order(created_at: :desc)
   end
@@ -21,6 +20,6 @@ class Recipe < ApplicationRecord
   end
 
   def self.public_recipes
-    Recipe.where("public = true ")
+    Recipe.where('public = true ')
   end
 end
