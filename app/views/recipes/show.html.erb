@@ -1,10 +1,10 @@
-<section>
-  <div>
-    <div>
-      <h2><%= @recipe.name %></h2>
+<section class='recipe-section'>
+  <div class='recipe-details'>
+    <div class='recipe-details-name'>
+      <h2><%= @recipe.name.capitalize %></h2>
     </div>
-    <div>
-      <div>
+    <div class='recipe-details-info'>
+      <div class='recipe-details-description'>
         <% if @recipe.preparation_time > 1 %>
           <% if @recipe.preparation_time % 1 == 0 %>
             <p>Preparation time: <%= @recipe.preparation_time.to_i %> hours</p>
@@ -33,34 +33,47 @@
         <% end %>
         <p><%= @recipe.description %></p>
       </div>
-      <div>
-        <div>
-          <%= button_to "Public", recipe_path(id: @recipe.id), method: :put, class: 'update-public-recipe-btn'  %>
-        </div>
+      <div class='recipe-details-public'>
+        <% if can? :manage, @recipe %>
+          <div>
+            <%= button_to "Public", recipe_path(id: @recipe.id), method: :put, class: 'update-public-recipe-btn'  %>
+          </div>
+          <div>
+            <%= link_to recipe_path(id: @recipe.id), method: :put, class: 'update-public-recipe-btn' do %>
+              <input type="checkbox" name="public" id="">
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-  <div>
-    <%= button_to 'Generate Shopping List', general_shopping_list_path, method: :get, class: 'generate-shopping-list-btn' %>
-    <%= button_to "Add ingredient", new_recipe_recipe_food_path(recipe_id: @recipe.id), method: :get, class: 'add-ingredient-btn'  %>
-  </div>
-  <div>
-    <table>
+  <% if can? :manage, @recipe %>
+    <div class='recipe-options'>
+      <%= button_to 'Generate Shopping List', general_shopping_list_path, method: :get, class: 'generate-shopping-list-btn' %>
+      <%= button_to "Add ingredient", new_recipe_recipe_food_path(recipe_id: @recipe.id), method: :get, class: 'add-ingredient-btn'  %>
+    </div>
+  <% end %>
+  <div class='ingredients'>
+    <table class='ingredients-table'>
       <tr>
         <th>Food</th>
         <th>Quantity</th>
         <th>Value</th>
-        <th>Actions</th>
+        <% if can? :manage, @recipe %>
+          <th>Actions</th>
+        <% end %>
       </tr>
       <% @recipe_foods.each do |recipe_food| %>
         <tr>
-          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.food.name.capitalize %></td>
           <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
           <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
-          <td>
-            <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), method: :get, class: 'update-food-link'  %>
-            <%= link_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), method: :delete, class: 'delete-food-link'  %>
-          </td>
+          <% if can? :manage, @recipe %>
+            <td>
+              <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), method: :get, class: 'update-food-link'  %>
+              <%= link_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), method: :delete, class: 'delete-food-link'  %>
+            </td>
+          <% end %>
         </tr>
       <% end %>
     </table>
