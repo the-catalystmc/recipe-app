@@ -1,5 +1,8 @@
-<div class="recipe-card-container">
-  <% @recipes.each do |recipe| %>
-    <%= render 'recipe_card', recipe: recipe %>
-  <% end %>
-</div>
+<section class="recipes-section">
+  <h2>Recipes</h2>
+  <div class="recipe-card-container">
+    <% @recipes.each do |recipe| %>
+      <%= render 'recipe_card', recipe: recipe %>
+    <% end %>
+  </div>
+</section>

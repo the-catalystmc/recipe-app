@@ -1,7 +1,7 @@
-<section>
-  <div class="add-food">
+<section class='add-food-section'>
+  <div class="add-food-container">
+    <h2>Add Food</h2>
     <%= form_with model: @food, url: foods_path, method: :post, class: 'add-food-form' do |form| %>
-      <h2>Add Food: </h2>
       <br>
       <div>
         <%= form.label :name %><br>
@@ -19,7 +19,7 @@
       </div>
       <br>
       <div>
-        <%= form.submit "Add post" %>
+        <%= form.submit "Add food", class: 'add-food-btn' %>
       </div>
     <% end %>
   </div>

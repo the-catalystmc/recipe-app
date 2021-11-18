@@ -1,9 +1,10 @@
-<section>
-  <div>
+<section class='foods-section'>
+  <h2>Foods</h2>
+  <div class='add-food-container'>
     <%= button_to "Add food", new_food_path, method: :get, class: 'add-food-btn'  %>
   </div>
-  <div>
-    <table>
+  <div class='foods-container'>
+    <table class='foods-table'>
       <tr>
         <th>Food</th>
         <th>Measurement unit</th>
