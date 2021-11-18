@@ -5,13 +5,40 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  <%= render "flash_notification" %>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to "Recipe App", recipes_path, method: :get, class: 'logo-nav-link'  %>
+          </li>
+          <li>
+            <%= link_to "Public recipes", public_recipes_path, method: :get, class: 'public-recipes-nav-link'  %>
+          </li>
+          <li>
+            <%= link_to "My recipes", recipes_path, method: :get, class: 'my-recipes-nav-link'  %>
+          </li>
+          <li>
+            <%= link_to "Foods", foods_path, method: :get, class: 'foods-nav-link'  %>
+          </li>
+        </ul>
+        <ul>
+          <% if user_signed_in? %>
+            <li>
+              <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'logout-btn'  %>
+            </li>
+          <% else %>
+            <li>
+              <%= button_to "Login", new_user_session_path, method: :get, class: 'login-btn'  %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+    <%= render "flash_notification" %>
     <%= yield %>
   </body>
 </html>

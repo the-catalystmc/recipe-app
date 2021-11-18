@@ -68,7 +68,13 @@ class RecipesController < ApplicationController
   end
 
   def set_user_recipe
-    @recipe = current_user.recipes.find(params[:id])
+    @recipe = Recipe.find(params[:id])
+    if @recipe.user_id == current_user.id || @recipe.public == true
+      @recipe
+    else
+      flash[:error] = 'You have no access to this page'
+      redirect_back(fallback_location: public_recipes_path)
+    end
   end
 
   def recipe_params
