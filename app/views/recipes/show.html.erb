@@ -35,12 +35,15 @@
       </div>
       <div class='recipe-details-public'>
         <% if can? :manage, @recipe %>
-          <div>
-            <%= button_to "Public", recipe_path(id: @recipe.id), method: :put, class: 'update-public-recipe-btn'  %>
-          </div>
-          <div>
+          <h3>Public:</h3>
+          <div class='switch'>
             <%= link_to recipe_path(id: @recipe.id), method: :put, class: 'update-public-recipe-btn' do %>
-              <input type="checkbox" name="public" id="">
+              <% if @recipe.public %>
+                <input type="checkbox" name="public" checked>
+              <% else %>
+                <input type="checkbox" name="public">
+              <% end %>
+              <span class="slider round"></span>
             <% end %>
           </div>
         <% end %>
