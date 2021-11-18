@@ -6,11 +6,11 @@ class Recipe < ApplicationRecord
     recipe.order(created_at: :desc)
   end
 
-  # def food_count
-  #   @recipe.recipe_foods.food.count()
-  # end
-
-  # def food_price
-
-  # end
+  def total_price
+    total = 0
+    recipe_foods.includes(:food).each do |ingredient|
+      total += ingredient.quantity * ingredient.food.price
+    end
+    total
+  end
 end
