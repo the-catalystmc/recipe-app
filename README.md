@@ -75,9 +75,9 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 👤 **Kevin**
 
-- GitHub: [@sevinchek](https://github.com/the-catalystmc)
-- Twitter: [@](https://twitter.com/)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/)
+- GitHub: [@sevinchek](https://github.com/sevinchek)
+- Twitter: [@sevinchek](https://twitter.com/sevinchek)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/sevinchek)
 
 
 ## 🤝 Contributing
