@@ -4,18 +4,22 @@
   flex-direction: column;
   height: 100vh;
   background-color: #ffd460;
+
   .recipe-details {
     .recipe-details-name {
       margin: 0 0 0.75rem 0;
     }
+
     .recipe-details-info {
       display: flex;
       justify-content: space-between;
+
       .recipe-details-description {
         p {
           margin: 0 0 0.5rem 0;
         }
       }
+
       .recipe-details-public {
         .switch {
           position: relative;
@@ -43,7 +47,7 @@
           transition: 0.4s;
         }
 
-        .slider:before {
+        .slider::before {
           position: absolute;
           content: "";
           height: 26px;
@@ -63,7 +67,7 @@
           box-shadow: 0 0 1px #17d7a0;
         }
 
-        input:checked + .slider:before {
+        input:checked + .slider::before {
           -webkit-transform: translateX(26px);
           -ms-transform: translateX(26px);
           transform: translateX(26px);
@@ -74,16 +78,18 @@
           border-radius: 34px;
         }
 
-        .slider.round:before {
+        .slider.round::before {
           border-radius: 50%;
         }
       }
     }
   }
+
   .recipe-options {
     display: flex;
     justify-content: space-between;
     padding: 1rem 0 1rem 0;
+
     .generate-shopping-list-btn,
     .add-ingredient-btn {
       background-color: #f07b3f;
@@ -94,31 +100,38 @@
       cursor: pointer;
     }
   }
+
   .ingredients {
     .ingredients-table {
       border-collapse: collapse;
       width: 100%;
       background-color: #ddd;
+
       td,
       th {
         border: 1px solid #ddd;
         padding: 8px;
       }
+
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
+
       tr:hover {
         background-color: #ddd;
       }
+
       th {
         text-align: left;
         background-color: #ea5455;
         color: #fff;
       }
+
       td {
         a {
           color: #f07b3f;
         }
+
         a:not(:last-child) {
           margin-right: 1rem;
         }
@@ -129,11 +142,13 @@
 
 .public-recipes-section {
   padding: 1rem 4rem;
+
   h2 {
     text-align: center;
     margin: 0 0 1rem 0;
     color: #ea5455;
   }
+
   .recipe-container {
     display: flex;
     justify-content: space-between;
@@ -142,15 +157,18 @@
     padding: 1rem 4rem;
     margin: auto;
     width: 80%;
+
     .recipe-name {
       .recipe-title {
         font-size: 1.5rem;
         margin: 0 0 0.75rem 0;
       }
+
       .recipe-owner {
         font-weight: 700;
       }
     }
+
     .recipe-info {
       p:not(:last-child) {
         margin: 0 0 0.75rem 0;
@@ -161,16 +179,18 @@
 
 .recipes-section {
   padding: 1rem 4rem;
+
   h2 {
     text-align: center;
     margin: 0 0 1rem 0;
     color: #ea5455;
   }
+
   .add-recipe-container {
     display: flex;
-    justify-content: flex-end;
     margin: 0 0 1rem 0;
     justify-content: center;
+
     .add-recipe-btn {
       background-color: #f07b3f;
       color: #fff;
@@ -181,8 +201,10 @@
       cursor: pointer;
     }
   }
+
   .recipe {
     margin: 0 0 1rem 0;
+
     .recipe-container {
       display: flex;
       justify-content: space-between;
@@ -191,24 +213,21 @@
       padding: 1rem 4rem;
       margin: auto;
       width: 80%;
+
       .recipe-name {
         margin: 0 2rem 0 0;
         display: flex;
         flex-direction: column;
         font-weight: 700;
+
         .recipe-title {
           font-size: 1.5rem;
           margin: 0 0 0.75rem 0;
         }
+
         .remove-recipe {
           color: #f07b3f;
           font-weight: 700;
-        }
-      }
-      .recipe-info {
-        .recipe-description {
-          p {
-          }
         }
       }
     }
@@ -217,27 +236,33 @@
 
 .add-recipe-section {
   padding: 1rem 4rem;
+
   .add-recipe-container {
     margin: auto;
     width: 40%;
+
     h2 {
       text-align: center;
       margin: 0 0 1rem 0;
       color: #ea5455;
     }
+
     .add-recipe-form {
       .add-recipe-input {
         width: 100%;
         padding: 0.25rem 0.5rem;
         margin: 0.5rem 0 1rem 0;
       }
+
       .public-checkbox {
         display: flex;
         margin: 0 0 1rem 0;
+
         label {
           margin: 0 0.25rem 0 0;
         }
       }
+
       .add-recipe-btn {
         background-color: #f07b3f;
         border: 1px solid #f07b3f;
