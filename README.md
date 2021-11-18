@@ -50,10 +50,10 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 ### Test
 
-1. For testing the controllers run:
+1. For testing run:
 
    ```sh
-   rspec spec/controllers/file_name.rb --format doc
+   rspec spec/* --format doc
    ```
 
 ## Acknowledgements
