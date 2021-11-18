@@ -19,6 +19,11 @@
   margin: 0;
   padding: 0;
   color: #2d4059;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background-color: #ffd460;
 }
 
 ul {

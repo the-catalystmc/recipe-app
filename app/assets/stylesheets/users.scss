@@ -23,10 +23,11 @@ nav {
     .login-btn {
       background-color: #f07b3f;
       border: 1px solid #f07b3f;
-      border-radius: 2px;
+      border-radius: 4px;
       padding: 0.25rem 0.25rem;
       color: #fff;
       cursor: pointer;
+      font-size: 1rem;
     }
     .logo-nav-link {
       font-size: 1.5rem;
@@ -56,4 +57,73 @@ nav {
   text-align: center;
   border-radius: 0.25rem;
   margin-bottom: 1rem;
+}
+
+.signup-section {
+  padding: 1rem 4rem;
+  .signup-container {
+    margin: auto;
+    width: 40%;
+    h2 {
+      text-align: center;
+      margin: 0 0 1rem 0;
+      color: #ea5455;
+    }
+    .new_user {
+      margin: 0 0 1rem 0;
+      input {
+        width: 100%;
+        padding: 0.25rem 0.5rem;
+        margin: 0.5rem 0 0 0;
+        text-align: center;
+      }
+      .signup-btn {
+        background-color: #f07b3f;
+        border: 1px solid #f07b3f;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.signin-section {
+  padding: 1rem 4rem;
+  .signin-container {
+    margin: auto;
+    width: 40%;
+    h2 {
+      text-align: center;
+      margin: 0 0 1rem 0;
+      color: #ea5455;
+    }
+    .new_user {
+      margin: 0 0 1rem 0;
+      .email-input,
+      .password-input {
+        width: 100%;
+        padding: 0.25rem 0.5rem;
+        margin: 0.5rem 0 0 0;
+        text-align: center;
+      }
+      .remember-checkbox {
+        margin: 1rem 0;
+        display: flex;
+        label {
+          margin: 0 0 0 0.5rem;
+        }
+      }
+      .signin-btn {
+        background-color: #f07b3f;
+        border: 1px solid #f07b3f;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+      }
+    }
+  }
 }
