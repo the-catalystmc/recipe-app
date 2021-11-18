@@ -1,27 +1,24 @@
-<h2>
-  Foods information
-</h2>
-<div>
-</div>
-<div>
-  <%= form_with model: @recipe_food, url: recipe_recipe_food_path, method: :put, class: 'update-recipe-food-form' do |form| %>
-    <h2>Update Food: </h2>
-    <br>
-    <div>
-      <%= form.text_field :recipe_id %>
-    </div>
-    <div>
-      <%= form.label "Food" %><br>
-      <%= form.select :food_id, [[@recipe_food.food.name, @recipe_food.food.id]] %>
-    </div>
-    <br>
-    <div>
-      <%= form.label :quantity %><br>
-      <%= form.number_field :quantity, step: :any, :required => true %>
-    </div>
-    <br>
-    <div>
-      <%= form.submit "Update food" %>
-    </div>
-  <% end %>
-</div>
+<section class="edit-ingredient-section">
+  <div class='edit-ingredient-container'>
+    <h2>Update Food</h2>
+    <%= form_with model: @recipe_food, url: recipe_recipe_food_path, method: :put, class: 'update-ingredient-form' do |form| %>
+      <br>
+      <div>
+        <%= form.text_field :recipe_id %>
+      </div>
+      <div>
+        <%= form.label "Food" %><br>
+        <%= form.select :food_id, [[@recipe_food.food.name, @recipe_food.food.id]] %>
+      </div>
+      <br>
+      <div>
+        <%= form.label :quantity %><br>
+        <%= form.number_field :quantity, step: :any, :required => true %>
+      </div>
+      <br>
+      <div>
+        <%= form.submit "Update food", class: 'update-ingredient-btn' %>
+      </div>
+    <% end %>
+  </div>
+</section>

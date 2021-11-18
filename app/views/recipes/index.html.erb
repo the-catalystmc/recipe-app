@@ -1,6 +1,11 @@
-<div class="recipe-card-container">
-<button> <%= link_to 'Add Recipe', "recipes/new" %> </button>
-  <% @recipes.each do |recipe| %>
-    <%= render 'recipe_card', recipe: recipe %>
-  <% end %>
-</div>
+<section class="recipes-section">
+  <h2>Recipes</h2>
+  <div class="add-recipe-container">
+    <button> <%= link_to 'Add Recipe', "recipes/new" %> </button>
+  </div>
+  <div class="recipe-card-container">
+    <% @recipes.each do |recipe| %>
+      <%= render 'recipe_card', recipe: recipe %>
+    <% end %>
+  </div>
+</section>

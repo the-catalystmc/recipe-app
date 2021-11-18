@@ -1,15 +1,13 @@
-<a href="/recipes/<%= recipe.id %>">
-  <div class="recipe">
-    <div class="title-a">
-      <h4 class="title-text-a">
-      <%= recipe.name %>
-      </h4>
-      <button> <%= link_to 'Delete', "recipes/#{recipe.id}", method: :delete %> </button>   
+<div class='recipe'>
+  <div class="recipe-container">
+    <div class="recipe-name">
+      <%= link_to recipe.name.capitalize, recipe, method: :get, class: 'recipe-title' %>
+      <%= link_to 'Remove', recipe, method: :delete, class: 'remove-recipe' %>
     </div>
-    <div class="info">
-      <p class="info-text">
-          <%= recipe.description %>
+    <div class="recipe-info">
+      <p class="recipe-description">
+        <%= recipe.description %>
       </p>
     </div>
   </div>
-</a>
+</div>
