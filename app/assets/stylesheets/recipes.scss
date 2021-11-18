@@ -2,92 +2,161 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.pr-header {
-    text-align: center;
-}
+// .pr-header {
+//   text-align: center;
+// }
 
-table {
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-}
+// table {
+//   text-align: center;
+//   display: flex;
+//   justify-content: space-around;
+// }
 
-table, th, td {
-    border: black solid 1px;
-    border-collapse: collapse;
-    width: 100%;
-}
+// table,
+// th,
+// td {
+//   border: black solid 1px;
+//   border-collapse: collapse;
+//   width: 100%;
+// }
 
-tr:nth-child(even) {
-    background-color: rgb(204, 195, 195);
+// tr:nth-child(even) {
+//   background-color: rgb(204, 195, 195);
+// }
+
+// .sl-info-cont {
+//   display: flex;
+//   justify-content: space-around;
+// }
+
+// .recipe {
+//   display: flex;
+//   border: 2px solid black;
+//   justify-content: space-evenly;
+
+//   .title {
+//     display: flex;
+//     flex-direction: column;
+
+//     .title-text {
+//       text-align: center;
+//     }
+//   }
+// }
+
+// .recipe-name {
+//   text-align: center;
+// }
+
+// .recipe-cont {
+//   display: flex;
+//   justify-content: space-around;
+
+//   .public-on {
+//     display: flex;
+//     justify-content: flex-end;
+//     align-content: flex-start;
+//     height: 10px;
+//     width: 25px;
+//     border: 1px black solid;
+//     background-color: green;
+//     border-radius: 25px;
+
+//     .toggle {
+//       height: 9px;
+//       width: 10px;
+//       border: 1px black solid;
+//       background-color: white;
+//       border-radius: 5px;
+//     }
+//   }
+
+//   .public-off {
+//     display: flex;
+//     justify-content: flex-end;
+//     align-content: flex-start;
+//     height: 10px;
+//     width: 25px;
+//     border: 1px black solid;
+//     background-color: red;
+//     border-radius: 25px;
+//   }
+// }
+
+// .recipe-buttons {
+//   display: flex;
+//   justify-content: space-around;
+//   width: 100%;
+// }
+
+// .line {
+//   border: 1px solid black;
+//   width: 60%;
+// }
+
+.recipe-section {
+  padding: 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ffd460;
+  .recipe-details {
+    .recipe-details-name {
+      margin: 0 0 0.75rem 0;
+    }
+    .recipe-details-info {
+      display: flex;
+      justify-content: space-between;
+      .recipe-details-description {
+        p {
+          margin: 0 0 0.5rem 0;
+        }
+      }
+    }
   }
-
-.sl-info-cont {
+  .recipe-options {
     display: flex;
-    justify-content: space-around;
-}
-
-.recipe {
-    display: flex;
-    border: 2px solid black;
-    justify-content: space-evenly;
-
-    .title {
-        display: flex;
-        flex-direction: column;
-
-        .title-text {
-            text-align: center;
+    justify-content: space-between;
+    padding: 1rem 0 1rem 0;
+    .generate-shopping-list-btn,
+    .add-ingredient-btn {
+      background-color: #f07b3f;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #f07b3f;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  .ingredients {
+    .ingredients-table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #ddd;
+      td,
+      th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #ddd;
+      }
+      th {
+        text-align: left;
+        background-color: #ea5455;
+        color: #fff;
+      }
+      td {
+        a {
+          color: #f07b3f;
         }
-    }
-}
-
-.recipe-name {
-    text-align: center;
-}
-
-.recipe-cont {
-    display: flex;
-    justify-content: space-around;
-
-    .public-on {
-        display: flex;
-        justify-content: flex-end;
-        align-content: flex-start;
-        height: 10px;
-        width: 25px;
-        border: 1px black solid;
-        background-color: green;
-        border-radius: 25px;
-
-        .toggle {
-            height: 9px;
-            width: 10px;
-            border: 1px black solid;
-            background-color: white;
-            border-radius: 5px;
+        a:not(:last-child) {
+          margin-right: 1rem;
         }
+      }
     }
-
-    .public-off {
-        display: flex;
-        justify-content: flex-end;
-        align-content: flex-start;
-        height: 10px;
-        width: 25px;
-        border: 1px black solid;
-        background-color: red;
-        border-radius: 25px;
-    }
-}
-
-.recipe-buttons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.line {
-    border: 1px solid black;
-    width: 60%;
+  }
 }
