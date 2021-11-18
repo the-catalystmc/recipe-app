@@ -1,11 +1,11 @@
-<div>
-	<h2 class="pr-header">Shopping List</h2>
-	<div class="sl-info-cont">
-		<h3>Amount of food items to buy: <%= @foods.count %></h3>
-		<h3>Total value of food needed: <%= @total_price %>
-</h3>
-	</div>
-	  <table>
+<section class="gs-section">
+  <div class='gs-container'>
+    <h2 class="gs-title">Shopping List</h2>
+    <div class="gs-info">
+      <h3>Amount of food items to buy: <%= @foods.count %></h3>
+      <h3>Total value of food needed: <%= @total_price %></h3>
+    </div>
+    <table class='gs-table'>
       <tr>
         <th>Food</th>
         <th>Quantity</th>
@@ -19,4 +19,5 @@
         </tr>
       <% end %>
     </table>
-</div>
+  </div>
+</section>

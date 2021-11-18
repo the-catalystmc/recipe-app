@@ -1,3 +1,111 @@
 // Place all the styles related to the RecipeFoods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.gs-section {
+  .gs-container {
+    padding: 1rem 4rem;
+    h2 {
+      text-align: center;
+      margin: 0 0 1rem 0;
+      color: #ea5455;
+    }
+    .gs-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem 4rem;
+      h3:not(:last-child) {
+        margin: 0 1rem 0 0;
+      }
+    }
+    .gs-table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #ddd;
+      td,
+      th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #ddd;
+      }
+      th {
+        text-align: left;
+        background-color: #ea5455;
+        color: #fff;
+      }
+      td {
+        a {
+          color: #f07b3f;
+        }
+        a:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.edit-ingredient-section {
+  padding: 1rem 4rem;
+  .edit-ingredient-container {
+    margin: auto;
+    width: 40%;
+    h2 {
+      text-align: center;
+      margin: 0 0 1rem 0;
+      color: #ea5455;
+    }
+    .update-ingredient-form {
+      input,
+      select {
+        width: 100%;
+        padding: 0.25rem 0.5rem;
+        margin: 0.5rem 0 0 0;
+        text-align: center;
+      }
+      .update-ingredient-btn {
+        background-color: #f07b3f;
+        border: 1px solid #f07b3f;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.add-ingredient-section {
+  padding: 1rem 4rem;
+  .add-ingredient-container {
+    margin: auto;
+    width: 40%;
+    h2 {
+      text-align: center;
+      margin: 0 0 1rem 0;
+      color: #ea5455;
+    }
+    .add-ingredient-form {
+      input,
+      select {
+        width: 100%;
+        padding: 0.25rem 0.5rem;
+        margin: 0.5rem 0 0 0;
+        text-align: center;
+      }
+      .add-ingredient-btn {
+        background-color: #f07b3f;
+        border: 1px solid #f07b3f;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
