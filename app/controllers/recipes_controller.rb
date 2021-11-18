@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @recipes = Recipe.all
+    @recipes = Recipe.where("public = 'true' ")
   end
 
   def general_shopping_list
