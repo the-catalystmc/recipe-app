@@ -3,7 +3,7 @@
     <h2 class="gs-title">Shopping List</h2>
     <div class="gs-info">
       <h3>Amount of food items to buy: <%= @foods.count %></h3>
-      <h3>Total value of food needed: <%= @total_price %></h3>
+      <h3>Total value of food needed: <%= @foods.sum { |r| r.recipe_foods.sum {|f| f[:quantity]*r.price }} %></h3>
     </div>
     <table class='gs-table'>
       <tr>
