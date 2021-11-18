@@ -7,15 +7,11 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @recipes = Recipe.where("public = 'true' ")
+    @recipes = Recipe.public_recipes
   end
 
   def general_shopping_list
-    @foods = current_user.foods
-    @total_price = 0
-    @foods.each do |food|
-      @total_price += food.price * food.food_quantity
-    end
+    @foods = current_user.foods.includes(:recipe_foods)
   end
 
   def show
