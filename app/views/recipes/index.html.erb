@@ -1,0 +1,11 @@
+<section class="recipes-section">
+  <h2>Recipes</h2>
+  <div class="add-recipe-container">
+    <%= button_to 'Add Recipe', new_recipe_path, method: :get, class: 'add-recipe-btn' %>
+  </div>
+  <div class="recipe-card-container">
+    <% @recipes.each do |recipe| %>
+      <%= render 'recipe_card', recipe: recipe %>
+    <% end %>
+  </div>
+</section>

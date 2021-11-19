@@ -1,0 +1,23 @@
+<section class="gs-section">
+  <div class='gs-container'>
+    <h2 class="gs-title">Shopping List</h2>
+    <div class="gs-info">
+      <h3>Amount of food items to buy: <%= @foods.count %></h3>
+      <h3>Total value of food needed: <%= @foods.sum { |r| r.recipe_foods.sum {|f| f[:quantity]*r.price }} %></h3>
+    </div>
+    <table class='gs-table'>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.food_quantity %></td>
+          <td>$<%= food.price * food.food_quantity %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</section>

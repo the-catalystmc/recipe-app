@@ -1,0 +1,8 @@
+<section class="public-recipes-section">
+  <h2 class="pr-header">Public Recipes</h2>
+  <div class="recipe-card-container">
+    <% @recipes.each do |recipe| %>
+      <%= render 'public_recipe_card', recipe: recipe %>
+    <% end %>
+  </div>
+</section>

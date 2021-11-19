@@ -1,0 +1,13 @@
+<div class='recipe'>
+  <div class="recipe-container">
+    <div class="recipe-name">
+      <%= link_to recipe.name.capitalize, recipe, method: :get, class: 'recipe-title' %>
+      <%= link_to 'Remove', recipe, method: :delete, class: 'remove-recipe' %>
+    </div>
+    <div class="recipe-info">
+      <p class="recipe-description">
+        <%= recipe.description %>
+      </p>
+    </div>
+  </div>
+</div>
